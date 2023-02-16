@@ -12,18 +12,17 @@ CONSUMER_SECRET = config['twitter']['CONSUMER_SECRET']
 ACCESS_KEY = config['twitter']['ACCESS_KEY']
 ACCESS_SECRET = config['twitter']['ACCESS_SECRET']
 
-def twitter_OAuth():
-    auth=tweepy.OAuthHandler(CONSUMER_KEY,CONSUMER_SECRET)
-    auth.set_access_token(ACCESS_KEY,ACCESS_SECRET)
+
+def twitter_OAuth(consumer_key,consumer_secret,access_key,access_secret):
+    auth=tweepy.OAuthHandler(consumer_key,consumer_secret)
+    auth.set_access_token(access_key,access_secret)
     api = tweepy.API(auth)
     return api
 
-api = twitter_OAuth()
+api = twitter_OAuth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET)
 
-# Get top popular tweets in a specefic period
 
 query = 'Your query'
-
 max_items = 100
 tweets = tweepy.Cursor(api.search_tweets, q = query ,tweet_mode = 'extended', lang = 'fa').items(max_items)
 column = ['Date','User Name','Id','Tweets','Hashtags','likes', 'Retweets', 'Followers', 'Location','Joined']
