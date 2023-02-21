@@ -1,4 +1,4 @@
-<h1 text-align="center"><h1>Collect tweets on MongoDB</h1>
+<h1 text-align="center"><h1>Get Tweets Twitter API</h1>
 
 <p text-align="center"><project-description>
 My first attempt at using Twitter API was for this code, and I was learning how to use the API in Python. Given my background in journalism, I decided to write code that retrieves tweets containing a particular hashtag (#مهسا_امینی).
